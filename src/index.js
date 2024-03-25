@@ -9,6 +9,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 
+//from here it will go to routes/index.js
 app.use('/api',apiRouter)
 app.get('/ping', (req,res) =>  {
     return res.json({message: 'Problem Service is alive'});

@@ -1,3 +1,4 @@
+//in index.js we export all controllers
 module.exports = {
-    problemController: require('./problem.controller')
+    problemController: require('./problems.controller')
 }

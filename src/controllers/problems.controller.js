@@ -21,7 +21,7 @@ function deleteProblem(req, res) {
 function updateProblem(req, res) {
 
 }
-
+//in controller, we export all functions
 module.exports = {
     addProblem,
     getProblem,
