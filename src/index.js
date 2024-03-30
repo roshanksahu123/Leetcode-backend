@@ -17,6 +17,9 @@ app.get('/ping', (req,res) =>  {
 })
 
 //last middleware if any error is encountered 
+//if we put it before the api routes called, then it is of no use. because it is a error middleware.
+//which takes four parameters. so it will be act as a error middleware. which supposed to be called at last
+// because we are calling in the middle it is of no use and the default error handler kicks in
 app.use(errorHandler);
 
 app.listen(PORT,() => {

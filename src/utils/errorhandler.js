@@ -19,3 +19,7 @@ function errorHandler(err,req,res,next) {
 }
 
 module.exports = errorHandler;
+
+//There is a default error handler which takes the same arguments as the above function.
+//And we are calling this error handler function before the actual error handler function kicks in
+//The default error handler wil be called at the end of the execution 
