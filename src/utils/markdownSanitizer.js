@@ -1,19 +1,22 @@
 const marked = require('marked');
 const sanitizeHtmlLibrary = require('sanitize-html');
-const TurndownSerivce = require('turndown');
+const TurndownService = require('turndown')
+
 
 function sanitizeMarkdownContent(markdownContent) {
-    const turndownService  = new TurndownSerivce();
-    //1.Convert markdown to HTML
+    const turndownService = new TurndownService();
+
+    // 1. Convert markdown to html
     const convertedHtml = marked.parse(markdownContent);
 
-    //2.Sanitize HTML
+    // 2. Sanitize html
     const sanitizedHtml = sanitizeHtmlLibrary(convertedHtml, {
-        allowedTags: sanitizeHtmlLibrary.defaults.allowedTags
+        allowedTags: sanitizeHtmlLibrary.defaults.allowedTags.concat(['img'])
     });
 
-    //3.Convert markdown
-    const sanitizedMarkdown= turndownService.turndown(sanitizedHtml);
+    // 3. Convert the sanitized html back to markdown
+    const sanitizedMarkdown = turndownService.turndown(sanitizedHtml);
+
     return sanitizedMarkdown;
 }
 
