@@ -24,3 +24,17 @@ V
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
+K
+src/config/logger.config.js,2/8/28f94f46ccbef46978567da0f9d8cd8be6237dd5
+G
+src/config/db.config.js,a/f/afa49f70fd074335865c037260e58c7cae2fca40
+V
+&src/repositories/problem.repository.js,0/8/085418eb7180e58e905f1519e0ec4f1ed3c83244
+O
+src/services/problem.service.js,2/e/2ef2ad1b2728f08b15f3274add9ab1683763787f
+I
+src/utils/errorhandler.js,3/d/3dd5c6bbeb9240fb266de592b5846e8c0f111a2b
+G
+src/config/logs/app.log,1/e/1e344ed50c5555d78f7e83813a1393583aadcd5b
+7
+app.log,a/0/a04cdc1b813999384ef385ac5191cbe69e844545
