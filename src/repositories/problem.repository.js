@@ -1,16 +1,19 @@
 const NotFound = require('../errors/notfound.error');
-const { Problem } = require('../models')
+const { Problem } = require('../models');
+
 class ProblemRepository {
 
     async createProblem(problemData) {
         try {
+
             const problem = await Problem.create({
-                title : problemData.title,
-                description : problemData.description,
+                title: problemData.title,
+                description: problemData.description,
                 testCases: (problemData.testCases) ? problemData.testCases : []
             });
+
             return problem;
-        } catch (error) {
+        } catch(error) {
             console.log(error);
             throw error;
         }
@@ -20,7 +23,7 @@ class ProblemRepository {
         try {
             const problems = await Problem.find({});
             return problems;
-        } catch (err) {
+        } catch(error) {
             console.log(error);
             throw error;
         }
@@ -37,7 +40,21 @@ class ProblemRepository {
             console.log(error);
             throw error;
         }
+    } 
+
+    async deleteProblem(id) {
+        try {
+            const deletedProblem = await Problem.findByIdAndDelete(id);
+            if(!deletedProblem) {
+                throw new NotFound("problem", id);
+            }
+            return deletedProblem;
+        } catch (error) {
+            console.log(error);
+            throw error;
+        }
     }
+
 }
 
 module.exports = ProblemRepository;
